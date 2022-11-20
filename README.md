@@ -22,6 +22,17 @@
 ⠘⢿⣿⣿⣿⣿⣷⣤⣤⣤⣤⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣁⣀⣀⣤⣤⣤⣶⣾⣿⣿⣿⣿⣿⣿⣿⠿⠁⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-### Description:
+## Description:
 brokenPanda enables enables SSL keylogging on a remote linux host and opens a pipe to 
-stream packet data and TLS keys back Wireshark on your local machine in real-time.
+stream packet data and TLS keys back Wireshark on your local machine in real-time
+
+## Requirements:
+
+#### Remote Host Dependencies:
+- You must have ssh access to the remote host (either password or ssh key)
+- The remote host must have tcpdump installed or you must have the ability to install it
+
+#### Local Dependencies:
+- sshpass
+- wireshark
+**brokenPanda will install these for you if you do not have them.**
