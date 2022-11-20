@@ -20,7 +20,9 @@ cyan='\033[0;36m'         # Cyan
 white='\033[0;37m'        # White
 # Bold
 bred='\033[1;31m'         # Red
-byellow='\033[1;33m'
+byellow='\033[1;33m'      # Yellow
+bgreen='\033[1;32m'       # Green
+bblue='\033[1;34m'         # Blue
 
 ###################
 #### FUNCTIONS ####
@@ -120,7 +122,7 @@ ${uncolor}"
 ### DEP CHECKS ####
 ###################
 
-echo -e "${blue}Checking some things....${uncolor}\n"
+echo -e "${bblue}Checking some things....\n"
 echo -ne "${green}########################                                                   (25%)\r${uncolor}"
 sleep 1
 echo -ne "${green}########################################                                   (50%)\r${uncolor}"
@@ -128,7 +130,6 @@ sleep 1
 echo -ne "${green}##########################################################                 (75%)\r${uncolor}"
 sleep 1           
 echo -ne "${green}##########################################################################(100%)\r${uncolor}\n"
-sleep 1
 echo -ne '\n'
 
 if (( $EUID != 0)); then
@@ -138,21 +139,20 @@ if (( $EUID != 0)); then
 fi
 
 check_dependencies 
-echo -e "${blue}Dependency checks good!${uncolor}"
-echo -ne '\n'
-echo -e "${green}--------------------------------------------------------------------------------"
-echo -ne '\n'
-echo -e "USAGE:"
-echo -e "1. >Answer target credential prompts"
-echo -e "2. >Add TLS keylog file to Wireshark"
-echo -e "3. >Chill..."
-echo -e "\n(Keylog is located in /tmp/pandaloot/keyloot.log)"
-echo -ne '\n'
+
+echo -e "${bblue}Dependency checks good!${uncolor}\n"
+echo -e "${green}--------------------------------------------------------------------------------\n"
+echo -e "${bgreen}USAGE:\n"
+echo -e "${green}1.> Answer target credential prompts"
+echo -e "2.> Add TLS keylog file to Wireshark"
+echo -e "3.> Chill..."
+echo -e "\n[*] (Keylog is located in /tmp/pandaloot/keyloot.log)"
+echo -e "[*] Add to Wireshark:"
+echo -e "    Edit > Preferences > Protocols > TLS > Pre-Master Secret log filename\n"
+echo -e "${yellow}--------------------------------------------------------------------------------\n"
 sleep 1
-echo -e "${yellow}--------------------------------------------------------------------------------"
 echo -e "${byellow}TARGET AND CREDENTIAL PROMPTS:"
 echo -ne '\n'
-sleep 1
 
 # Making keylog loot files and named pipe
 if [ ! -e /tmp/loot ]; then
@@ -167,6 +167,7 @@ fi
 
 echo -e "${yellow}Is your SSH access to the target via password or RSA key?"
 read -rep "[Enter 'p' if password OR 'k' if key]: " PORK
+echo -ne '\n'
  
 if [ $PORK = "p" ] || [ $PORK = "P" ]; then
     read -p "Enter 'username@ip_address' for the target: " TARGET
