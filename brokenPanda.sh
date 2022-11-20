@@ -32,7 +32,7 @@ cyan='\033[0;36m'         # Cyan
 white='\033[0;37m'        # White
 # Bold
 bred='\033[1;31m'         # Red
-COLUMNS=$(tput cols)
+
 ###################
 #### FUNCTIONS ####
 ###################
