@@ -20,6 +20,7 @@ cyan='\033[0;36m'         # Cyan
 white='\033[0;37m'        # White
 # Bold
 bred='\033[1;31m'         # Red
+byellow='\033[1;33m'
 
 ###################
 #### FUNCTIONS ####
@@ -164,7 +165,7 @@ if [ ! -f /tmp/pandaloot/keyloot.log ]; then
     touch /tmp/pandaloot/keyloot.log
 fi
 
-echo -e "${yellow}Is your SSH access to the target via password or RSA key?"
+echo -e "${byellow}Is your SSH access to the target via password or RSA key?"
 read -rep "[Enter 'p' if password OR 'k' if key]: " PORK
  
 if [ $PORK = "p" ] || [ $PORK = "P" ]; then
