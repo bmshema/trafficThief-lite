@@ -33,6 +33,6 @@ stream packet data and TLS keys back Wireshark on your local machine in real-tim
 - The remote host must have tcpdump installed or you must have the ability to install it
 
 #### Local Dependencies:
+*brokenPanda will install these for you if you do not have them.*
 - sshpass
 - wireshark
-**brokenPanda will install these for you if you do not have them.**
