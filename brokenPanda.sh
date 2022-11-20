@@ -125,15 +125,7 @@ ___.                 __                __________                    .___
      \/                  \/    \/     \/               \/     \/      \/     \/ 
 --------------------------------------------------------------------------------
 ${uncolor}"
-echo -e "${green}USAGE:"
-echo -e "1. >Answer target credential prompts"
-echo -e "2. >Add TLS keylog file to Wireshark"
-echo -e "3. >Chill..."
-echo -e "\n(Keylog is located in /tmp/pandaloot/keyloot.log)"
-echo -ne '\n'
-echo -e "${yellow}--------------------------------------------------------------------------------"
-echo -ne '\n'
-sleep 1
+
 
 ###################
 ### DEP CHECKS ####
@@ -159,6 +151,15 @@ fi
 check_dependencies 
 echo -e "${blue}Dependency checks good!${uncolor}"
 echo -ne '\n'
+echo -e "${green}--------------------------------------------------------------------------------"
+echo -ne '\n'
+echo -e "USAGE:"
+echo -e "1. >Answer target credential prompts"
+echo -e "2. >Add TLS keylog file to Wireshark"
+echo -e "3. >Chill..."
+echo -e "\n(Keylog is located in /tmp/pandaloot/keyloot.log)"
+echo -ne '\n'
+sleep 1
 echo -e "${yellow}--------------------------------------------------------------------------------"
 echo -e "TARGET AND CREDENTIAL PROMPTS:"
 echo -ne '\n'
@@ -178,7 +179,7 @@ fi
 echo -e "${yellow}Is your SSH access to the target via password or RSA key?"
 read -rep "[Enter 'p' if password OR 'k' if key]: " PORK
  
-if [ $PORK = "p" or "P" ]; then
+if [ $PORK = "p" ] || [ $PORK = "P" ]; then
     read -p "Enter 'username@ip_address' for the target: " TARGET
     read -p "Enter the user password for the target: " PASS
     echo -e "--------------------------------------------------------------------------------"
@@ -190,7 +191,7 @@ if [ $PORK = "p" or "P" ]; then
     wait
     exit 1
 
-elif [ $PORK = "k" or "K" ]; then
+elif [ $PORK = "k" ] || [ $PORK = "K" ]; then
     read -p "Enter 'username@ip_address' for the target: " TARGET
     read -p "Enter the full path to your private key file: " KEYFILE
     echo -e "--------------------------------------------------------------------------------"
