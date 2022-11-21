@@ -52,3 +52,6 @@ stream packet data and TLS keys back to Wireshark on your local machine in real-
 -  (Currently) Once your are complete **you must stop the packet capture in wireshark and save the pcap before you kill the program.**
 -  CTRL + C will stop everything
 
+## Disclaimer:
+
+Author assume no liability and are not responsible for any misuse or damage caused by this program.
