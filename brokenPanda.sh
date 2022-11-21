@@ -4,6 +4,7 @@
 # Version 0.5
 # Author: bmshema
 #
+# Copyright © 2022 bmshema
 #
 ###################
 ### TEXT COLORS ###
