@@ -30,11 +30,13 @@ stream packet data and TLS keys back to Wireshark on your local machine in real-
 ## Requirements:
 
 #### Remote Host Dependencies:
+- Linux hosts only at this time.
 - You must have ssh access to the remote host (either password or ssh key)
 - The remote host must have tcpdump installed or you must have the ability to install it
 
 #### Local Dependencies:
 *brokenPanda will install these for you if you do not have them.*
+- Debian Linux-based OS
 - `sshpass`
 - `wireshark`
 
