@@ -49,6 +49,6 @@ stream packet data and TLS keys back Wireshark on your local machine in real-tim
 ![image](https://user-images.githubusercontent.com/92175742/202934248-2780eeeb-8cdd-4724-8167-1e5b8512e004.png)
 
 -  As the remote host user browses, you will see TLS keys scrolling in the additional terminal indicating the TLS keys are feeding to `/tmp/pandaloot/keyloot.log`.
--  (Currently) Once your are complete **you must stop the packet capture in wireshark and save the pcap before you kill the program**
+-  (Currently) Once your are complete **you must stop the packet capture in wireshark and save the pcap before you kill the program.**
 -  CTRL + C will stop everything
 
