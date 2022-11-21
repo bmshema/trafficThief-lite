@@ -46,7 +46,7 @@ stream packet data and TLS keys back to Wireshark on your local machine in real-
 ![image](https://user-images.githubusercontent.com/92175742/202934439-e17bc465-0678-4983-9c25-d357dca70321.png)
 
 - Wireshark and a terminal will open.
-- The TLS keylogfile will be created in `/tmp/pandaloot/keyloot.log` on your machine. This needs to be loaded in Wireshark.
+- The TLS keylogfile will be created in `/tmp/pandaloot/keyloot.log` on your machine. This needs to be loaded in Wireshark initially and will update in real-time.
 
 ![image](https://user-images.githubusercontent.com/92175742/202934248-2780eeeb-8cdd-4724-8167-1e5b8512e004.png)
 
