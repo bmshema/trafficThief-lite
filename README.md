@@ -56,4 +56,4 @@ stream packet data and TLS keys back to Wireshark on your local machine in real-
 
 ## Disclaimer:
 
-Author assume no liability and are not responsible for any misuse or damage caused by this program.
+Authors assume no liability and are not responsible for any misuse or damage caused by this program.
