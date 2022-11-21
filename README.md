@@ -25,7 +25,7 @@
 
 ## Description:
 brokenPanda enables enables SSL keylogging on a remote linux host and opens a pipe to 
-stream packet data and TLS keys back Wireshark on your local machine in real-time
+stream packet data and TLS keys back Wireshark on your local machine in real-time.
 
 ## Requirements:
 
