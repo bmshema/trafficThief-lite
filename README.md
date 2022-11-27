@@ -24,7 +24,7 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 ## Description:
-brokenPanda is a post-exploit utility tthat enables SSL keylogging on a remote linux host and opens a pipe to 
+brokenPanda is a post-exploit utility that enables SSL keylogging on a remote linux host and opens a pipe to 
 stream packet data and TLS keys back to Wireshark on your local machine in real-time.
 
 ## Requirements:
