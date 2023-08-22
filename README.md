@@ -1,16 +1,7 @@
-# brokenPanda
-```plaintext
-           --------------------------------------------------------------------------------
-           ___.                 __                __________                    .___       
-           \_ |_________  ____ |  | __ ____   ____\______   \_____    ____    __| _/____   
-            | __ \_  __ \/  _ \|  |/ // __ \ /    \|     ___/\__  \  /    \  / __ |\__  \  
-            | \_\ \  | \(  <_> )    <\  ___/|   |  \    |     / __ \|   |  \/ /_/ | / __ \_
-            |___  /__|   \____/|__|_ \\___  >___|  /____|    (____  /___|  /\____ |(____  /
-                \/                  \/    \/     \/               \/     \/      \/     \/ 
-           --------------------------------------------------------------------------------
-```
+# trafficThief-lite
+
 ## Description:
-brokenPanda is a post-exploit utility that enables SSL keylogging on a remote linux host and opens a pipe to 
+A post-exploit utility that enables SSL/TLS key-logging on a remote linux host and opens a pipe to 
 stream packet data and TLS keys back to Wireshark on your local machine in real-time.
 
 ## Requirements:
@@ -32,12 +23,12 @@ stream packet data and TLS keys back to Wireshark on your local machine in real-
 ![image](https://user-images.githubusercontent.com/92175742/202934439-e17bc465-0678-4983-9c25-d357dca70321.png)
 
 - Wireshark and a terminal will open.
-- The TLS keylogfile will be created in `/tmp/pandaloot/keyloot.log` on your machine. This needs to be loaded in Wireshark initially and will update in real-time.
+- The TLS key-log file will be created in `/tmp/pandaloot/keyloot.log` on your machine. This needs to be loaded in Wireshark initially and will update in real-time.
 
 ![image](https://user-images.githubusercontent.com/92175742/202934248-2780eeeb-8cdd-4724-8167-1e5b8512e004.png)
 
 -  As the remote host user browses, you will see TLS keys scrolling in the additional terminal indicating the TLS keys are feeding to `/tmp/pandaloot/keyloot.log`.
--  (Currently) Once your are complete **you must stop the packet capture in wireshark and save the pcap before you kill the program.**
+-  (Currently) Once your are complete **you must stop the packet capture in Wireshark and save the pcap before you kill the program.**
 -  CTRL + C will stop everything
 
 ## Disclaimer:
